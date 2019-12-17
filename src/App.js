@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MenuSuperior from './Components/menuSuperior/menuSuperior';
+import MenuSuperior from './components/menuSuperior/menuSuperior';
 
 function App() {
   return (

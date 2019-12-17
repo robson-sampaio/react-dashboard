@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MenuSuperior extends Components {
+class MenuSuperior extends Component {
 
     render(){
         return (
