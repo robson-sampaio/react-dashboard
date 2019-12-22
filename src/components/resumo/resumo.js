@@ -20,11 +20,18 @@ class Resumo extends Component {
             }
         }
     }
+
+    componentDidMount(){
+        fetch('http://www.devup.com.br/php/api-dashboard/api/resumo')
+        .then(resultado => resultado.json().then(dados => this.setState(dados)));
+        console.log(this.state)
+    }
+
     render() { 
         return ( 
             <div>
-                <h2 className="mt-2 text-left mx-4">RESUMO</h2>
-                <div className="row mx-2">
+                <h2 className="mt-2 text-left mx-3">RESUMO</h2>
+                <div className="row px-0 mx-1">
                     <div className="col">
                         <div className="row mx-0">
                             <h3>Consultas</h3>
@@ -54,7 +61,7 @@ class Resumo extends Component {
                                     <div className="card-header"> 30 dias anteriores</div>
                                     <div className="card-body">
                                         {this.state.faturamento.anterior.valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
-                                        <span className="badge badge-success ml-1">
+                                        <span className={"badge ml-1 " + (this.state.faturamento.anterior.comparativo > 0 ? "badge-success" : "badge-danger")}>
                                             {this.state.faturamento.previsao.comparativo} %
                                         </span>
                                     </div>
@@ -65,7 +72,7 @@ class Resumo extends Component {
                                     <div className="card-header">Próximos 30 dias</div>
                                     <div className="card-body">
                                         {this.state.faturamento.previsao.valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}
-                                        <span className="badge badge-danger ml-1">
+                                        <span className={"badge ml-1 " + (this.state.faturamento.previsao.comparativo > 0 ? "badge-success" : "badge-danger")}>
                                             {this.state.faturamento.previsao.comparativo} %
                                         </span>
                                     </div>
@@ -74,56 +81,6 @@ class Resumo extends Component {
                         </div>
                     </div>
                 </div>                
-                
-                {/* <h2 className="mt-2 text-left">RESUMO</h2>
-                <div className="row">
-                    <div className="col">
-                        <h3>Consultas</h3>
-                        <div className="row">
-                            <div className="col">                            
-                                <div class="card mt-2 text-center">
-                                    <div class="card-header">
-                                        30 dias anteriores
-                                    </div>
-                                    <div class="card-body">
-                                        <p>{this.state.consultas.consultas_30dias_anteriores}</p>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div className="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        30 dias anteriores
-                                    </div>
-                                    <div class="card-body">
-                                        <p>{this.state.consultas.consultas_30dias_anteriores}</p>
-                                    </div>
-                                </div>
-                            </div>  
-                            <div className="col">
-                                <h3>Faturamento</h3>
-                                <div class="card">
-                                    <div class="card-header">
-                                        30 dias anteriores
-                                    </div>
-                                    <div class="card-body">
-                                        <p>{this.state.consultas.consultas_30dias_anteriores}</p>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div className="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        30 dias anteriores
-                                    </div>
-                                    <div class="card-body">
-                                        <p>{this.state.consultas.consultas_30dias_anteriores}</p>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div> 
-                    </div>                              
-                </div> */}
             </div>
          )
     }
