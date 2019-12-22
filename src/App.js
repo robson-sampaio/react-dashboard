@@ -3,6 +3,7 @@ import './App.css';
 import MenuSuperior from './components/menuSuperior/menuSuperior';
 import Resumo from './components/resumo/resumo';
 import Consultas from './components/Consultas/Consultas'
+import Faturamento from './components/Faturamento/Faturamento'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <MenuSuperior/>
       <Resumo/>
       <Consultas/>
+      <Faturamento/>
     </div>
   );
 }

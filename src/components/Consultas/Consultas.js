@@ -17,10 +17,10 @@ class Consultas extends Component {
     render() { 
         return ( 
             <div>
-                <h2 className="text-left mt-2 mx-3">Consultas</h2>
-                <div className="row">
-                    <div className="col ml-3">
-                        <div className="card mt-2">
+                <h2 className="text-left mt-3 mx-3">Consultas</h2>
+                <div className="row text-center">
+                    <div className="col ml-3 mr-3">
+                        <div className="card">
                             <div className="card-header">
                                 Realizadas
                             </div>
@@ -46,8 +46,8 @@ class Consultas extends Component {
                             </table>
                         </div>
                     </div>
-                    <div className="col mx-2">
-                        <div className="card mt-2">
+                    <div className="col mr-3 pl-0">
+                        <div className="card">
                             <div className="card-header">
                                 Marcadas
                             </div>
@@ -66,8 +66,8 @@ class Consultas extends Component {
                                                     <td>{item.especialidade}</td>
                                                     <td>{item.quantidade}</td>
                                                 </tr>
-                                            )
-                                        })
+                                                )
+                                            })
                                     }
                                 </tbody>
                             </table>
