@@ -5,7 +5,7 @@ class Resumo extends Component {
         super(props);
         this.state = {  
             consultas : {
-                consultas_30dias_anteriores : 0,
+                consultas_30dias_anteiores : 0,
                 consultas_30dias_posteriores : 0
             },
             faturamento : {
@@ -40,7 +40,7 @@ class Resumo extends Component {
                             <div className="col">
                                 <div className="card mt-2 text-center">
                                     <div className="card-header"> 30 dias anteriores</div>
-                                    <div className="card-body">{this.state.consultas.consultas_30dias_anteriores}</div>
+                                    <div className="card-body">{this.state.consultas.consultas_30dias_anteiores}</div>
                                 </div>
                             </div>
                             <div className="col">
